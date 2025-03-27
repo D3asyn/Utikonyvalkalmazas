@@ -18,10 +18,10 @@ export default function ReviewCard({ user, rating, comment, date }: ReviewCardPr
     .toUpperCase()
 
   return (
-    <Card>
+    <Card className="bg-white">
       <CardContent className="p-4">
         <div className="flex items-start gap-3">
-          <Avatar>
+          <Avatar className="bg-gradient-blue text-white">
             <AvatarFallback>{initials}</AvatarFallback>
           </Avatar>
           <div className="flex-1">

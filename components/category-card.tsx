@@ -25,11 +25,28 @@ export default function CategoryCard({ name, icon, color, textColor }: CategoryC
     }
   }
 
+  const getGradientClass = () => {
+    switch (icon) {
+      case "landmark":
+        return "bg-gradient-blue"
+      case "utensils":
+        return "bg-gradient-orange"
+      case "activity":
+        return "bg-gradient-green"
+      case "calendar":
+        return "bg-gradient-purple"
+      default:
+        return "bg-gradient-blue"
+    }
+  }
+
   return (
     <Link href="#">
-      <Card className="hover:shadow-md transition-shadow">
+      <Card className="hover:shadow-md transition-shadow card-hover-effect bg-white">
         <CardContent className="p-4 flex flex-col items-center justify-center">
-          <div className={`w-12 h-12 rounded-full ${color} flex items-center justify-center mb-2`}>{getIcon()}</div>
+          <div className={`w-12 h-12 rounded-full ${getGradientClass()} flex items-center justify-center mb-2`}>
+            {getIcon()}
+          </div>
           <span className="font-medium text-sm">{name}</span>
         </CardContent>
       </Card>

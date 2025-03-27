@@ -15,10 +15,10 @@ interface PlaceCardProps {
 export default function PlaceCard({ id, name, category, image, rating, distance }: PlaceCardProps) {
   return (
     <Link href={`/place/${id}`}>
-      <Card className="overflow-hidden hover:shadow-md transition-shadow">
+      <Card className="overflow-hidden hover:shadow-md transition-shadow card-hover-effect bg-white">
         <div className="relative h-48">
           <img src={image || "/placeholder.svg"} alt={name} className="w-full h-full object-cover" />
-          <Badge className="absolute top-3 left-3">{category}</Badge>
+          <Badge className="absolute top-3 left-3 bg-gradient-blue text-white">{category}</Badge>
         </div>
         <CardContent className="p-4">
           <div className="flex justify-between items-start">
@@ -29,7 +29,7 @@ export default function PlaceCard({ id, name, category, image, rating, distance 
                 <span>{distance}</span>
               </div>
             </div>
-            <div className="flex items-center bg-primary/10 px-2 py-1 rounded-md">
+            <div className="flex items-center bg-yellow-100 px-2 py-1 rounded-md">
               <Star className="h-4 w-4 fill-yellow-400 text-yellow-400 mr-1" />
               <span className="font-medium">{rating}</span>
             </div>
